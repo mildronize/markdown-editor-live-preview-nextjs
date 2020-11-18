@@ -88,7 +88,8 @@ class MdCompletionItemProvider implements languages.CompletionItemProvider {
         this.mathCompletions = [...c1, ...c2, ...c3, envSnippet];
         // Sort
         this.mathCompletions.forEach(item => {
-            item.sortText = item.label.replace(/[a-zA-Z]/g, c => {
+            const label = item.label as string;
+            item.sortText = label.replace(/[a-zA-Z]/g, c => {
                 if (/[a-z]/.test(c)) {
                     return `0${c}`;
                 } else {
@@ -211,7 +212,7 @@ class MdCompletionItemProvider implements languages.CompletionItemProvider {
                     if (addClosingParen) {
                         item.insertText = item.label + ')';
                     } else {
-                        item.insertText = item.label
+                        item.insertText = item.label as string;
                     }
 
                     item.documentation = curr.text;
