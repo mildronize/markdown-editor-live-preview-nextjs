@@ -14,3 +14,5 @@ This example adds support for [Monaco Editor](https://github.com/Microsoft/monac
 ## Ref
 
 - Special thanks ported [Markdown extension for VS Code](https://github.com/yzhang-gh/vscode-markdown) to Monaco web editor.
+- [Markdown extension for VS Code](https://github.com/yzhang-gh/vscode-markdown)
+
