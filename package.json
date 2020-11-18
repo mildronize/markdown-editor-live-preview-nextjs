@@ -16,7 +16,9 @@
     "next-fonts": "^1.0.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-monaco-editor": "^0.34.0"
+    "react-markdown": "^5.0.2",
+    "react-monaco-editor": "^0.34.0",
+    "remark-gfm": "^1.0.0"
   },
   "license": "MIT",
   "devDependencies": {
