@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from 'react';
 import dynamic from 'next/dynamic'
 const Editor = dynamic(import('../Editor/Editor'), { ssr: false });
 import { EditorProps } from '../Editor/Editor';
-import ImageUploadHandler from './ImageUploadHandler';
 
 interface MainEditor extends EditorProps {
   setActiveLine: Function;

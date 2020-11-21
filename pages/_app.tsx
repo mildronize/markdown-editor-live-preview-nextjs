@@ -1,5 +1,4 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import StyledNormalize from 'styled-normalize';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -18,7 +17,6 @@ const theme = {
 export default function App({ Component, pageProps }) {
   return (
     <>
-      {/* <StyledNormalize /> */}
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
