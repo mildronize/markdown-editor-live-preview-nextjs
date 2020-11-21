@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import dynamic from 'next/dynamic'
-const Editor = dynamic(import('../Editor/Editor'), { ssr: false });
+const MarkdownEditor = dynamic(import('../Editor/MarkdownEditor'), { ssr: false });
 import { EditorProps } from '../Editor/Editor';
 
 interface MainEditor extends EditorProps {
@@ -52,9 +52,8 @@ const MainEditor = ({ setActiveLine, ...props }: MainEditor) => {
   return (
     <span>
 
-      <Editor
+      <MarkdownEditor
         {...props}
-        language="markdown"
         editorDidMount={_editorDidMount}
       />
 
