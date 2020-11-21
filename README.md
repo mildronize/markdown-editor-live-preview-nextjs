@@ -10,6 +10,8 @@ This example adds support for [Monaco Editor](https://github.com/Microsoft/monac
 [`react-monaco-editor`](https://github.com/react-monaco-editor/react-monaco-editor) library.
 
 
+- React Toast
+https://fkhadra.github.io/react-toastify/introduction/
 
 ## Ref
 

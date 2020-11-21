@@ -4,20 +4,22 @@ import { useEffect, useState } from 'react'
 const MonacoEditor = dynamic(import('react-monaco-editor'), { ssr: false })
 import { MonacoEditorProps } from 'react-monaco-editor'
 
-export interface EditorProps extends MonacoEditorProps{
+export interface EditorProps extends MonacoEditorProps {
   loading?: React.ReactNode | string;
 }
 
 const Editor = ({
   loading = 'Loading Monaco Editor ...',
   ...props
-} : EditorProps) => {
+}: EditorProps) => {
 
+  let dragProvider;
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(()=> {
+  useEffect(() => {
     setIsLoading(false);
   }, []);
+
 
   function _editorDidMount(editor, monaco) {
     // @ts-ignore
@@ -29,18 +31,20 @@ const Editor = ({
         return '/_next/static/ts.worker.js'
       return '/_next/static/editor.worker.js'
     }
+
+    // Call the rest editorDidMount from other components
     if (props.editorDidMount) props.editorDidMount(editor, monaco);
-    
+
   }
 
   return (
     <>
-      { isLoading && loading }
+      { isLoading && loading}
       {!isLoading &&
-        <MonacoEditor
-          {...props}
-          editorDidMount={_editorDidMount}
-        />
+          <MonacoEditor
+            {...props}
+            editorDidMount={_editorDidMount}
+          />
       }
     </>
 
